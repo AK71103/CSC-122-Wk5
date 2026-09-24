@@ -1,0 +1,29 @@
+//Well thats just prime
+//Alexander W. Kazantzis
+//9-24-26
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cmath>
+using namespace std;
+void ShwPrmFctrs(int NumInput, int FactorNum= 2) { //Takes an Int arguement and returns its Prime factors, if "int n" is <=1 Return an empty list. Must use recursion.
+    if (NumInput <= 1){ //Base case
+        return;
+    }
+    if (NumInput % FactorNum == 0){ 
+        ShwPrmFctrs(NumInput/FactorNum, FactorNum);
+        cout << FactorNum << " "; //print after recursion
+    }
+    else{
+        ShwPrmFctrs(NumInput,FactorNum+1);
+    }
+}
+
+int main() {
+    int UsrNum;
+    std:: cout << "enter a positive number: ";
+    std:: cin >> UsrNum;
+    ShwPrmFctrs(UsrNum);
+    cout <<  endl;
+    return 0;
+}
